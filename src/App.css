@@ -1,30 +1,37 @@
 .App {
+    display: flex;
+    justify-content: center;
+}
+.AppCounter {
     border: 2px solid deepskyblue;
     width: 500px;
-    height: 500px;
-    margin: auto;
+    height: 450px;
     border-radius: 10px;
     background-color: darkslategrey;
+    margin: 20px;
 }
-
-.AppDisplay {
+.AppCounterNew {
+    border: 2px solid deepskyblue;
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: darkslategrey;
+    margin: 20px;
+}
+/*.AppCounterDisplay {
     background: -moz-linear-gradient(#00bbd6, #ebffff);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
     width: 300px;
     height: 200px;
     margin: 50px 100px;
     border-radius: 10px;
-
-
-}
-
+}*/
 .DisplayCount {
     margin:10px;
     padding: 80px 220px;
     font-size: 50px;
     background-color: cyan;
     border-radius: 10px;
-
 }
 .DisplayCountRed {
     margin:10px;
@@ -33,10 +40,7 @@
     background-color: cyan;
     color: crimson;
     border-radius: 10px;
-
 }
-
-
 .AppIncrement {
     width: 100px;
     height: 50px;
@@ -44,14 +48,10 @@
     border-radius: 10px;
     background: -moz-linear-gradient(#00bbd6, #ebffff);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
-
 }
-
 .AppIncrement:active{
     color: ghostwhite;
 }
-
-
 .AppReset {
     width: 100px;
     height: 50px;
@@ -63,11 +63,36 @@
 .AppReset:active{
     color: ghostwhite;
 }
-
 .Buttons {
     border: 3px solid deepskyblue;
     margin: 30px 30px;
     border-radius: 10px;
+}
 
+.DisplayCounterNew {
+    width: 96%;
+    height: 50%;
+    margin: -30px 10px;
+    font-weight: bold;
+    font-size: 40px;
+    background-color: cyan;
+    border-radius: 10px;
+    color:rgba(17,52,84,0.96);
+}
+.MaxValueInput {
+    font-size: 20px;
+    width: 120px;
+    height: 30px;
+    margin-left: 50px;
+}
+.StartValueInput {
+    font-size: 20px;
+    width: 120px;
+    height: 30px;
+    margin-left: 42px;
+}
+.StartInputWithText {
 
 }
+
+

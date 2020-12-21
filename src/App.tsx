@@ -3,6 +3,7 @@ import './App.css';
 import {Display} from "./Display";
 import {Increment} from "./Increment";
 import {Reset} from "./Reset";
+import {DisplayNew} from "./countNew/DisplayNew";
 
 
 export function App() {
@@ -23,16 +24,34 @@ export function App() {
         setCount(min)
     }
 
-    return (
 
+    return (
         <div className="App">
-            <Display count={count}/>
-            <div className="Buttons">
-                <Increment title={"Inc"} IncrCount={IncrementCount} disabledInc={disabledIncCount} />
-                <Reset title={"Res"} ResCount={ResetCount} disabledRes={disabledResCount} />
+            <div className="AppCounter">
+                <Display count={count}/>
+                <div className="Buttons">
+                    <Increment title={"Inc"} IncrCount={IncrementCount} disabledInc={disabledIncCount}/>
+                    <Reset title={"Res"} ResCount={ResetCount} disabledRes={disabledResCount}/>
+                </div>
+            </div>
+
+            <div className="AppCounterNew">
+                <DisplayNew/>
+                <div>
+
+                </div>
             </div>
         </div>
     )
+
+    /* return (
+         <div className="AppNew" >
+             <DisplayNew />
+             <div >
+
+             </div>
+         </div>
+     )*/
 }
 
 
