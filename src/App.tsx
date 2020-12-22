@@ -29,14 +29,17 @@ export function App() {
         <div className="App">
             <div className="AppCounter">
                 <Display count={count}/>
-                <div className="Buttons">
+                <div className="ButtonsBorder">
                     <Increment title={"Inc"} IncrCount={IncrementCount} disabledInc={disabledIncCount}/>
                     <Reset title={"Res"} ResCount={ResetCount} disabledRes={disabledResCount}/>
                 </div>
             </div>
 
             <div className="AppCounterNew">
-                <DisplayNew/>
+                <DisplayNew titleMax={"Max value:"} titleMin={"Start value:"} />
+                <div className="ButtonsBorderNew">
+
+                </div>
                 <div>
 
                 </div>

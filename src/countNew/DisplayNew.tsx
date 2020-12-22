@@ -1,7 +1,9 @@
 import React from "react";
-import {kMaxLength} from "buffer";
+
 
 export type DisplayNewPropsType = {
+    titleMax: string
+    titleMin: string
     /*inputMax: number
     inputMin: number*/
 }
@@ -9,8 +11,8 @@ export type DisplayNewPropsType = {
 export function DisplayNew(props: DisplayNewPropsType) {
     return (
         <div className="DisplayCounterNew">
-            <p className='MaxInputWithText'>Max value: <input className='MaxValueInput' type='number'/></p>
-            <p className='StartInputWithText'> Start value: <input className='StartValueInput' type='number' min='-1'/></p>
+            <p className='MaxInputWithText'>{props.titleMax} <input className='MaxValueInput' type='number'/></p>
+            <p className='StartInputWithText'> {props.titleMin} <input className='StartValueInput' type='number' min='-1'/></p>
         </div>
 
     )

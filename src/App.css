@@ -63,7 +63,7 @@
 .AppReset:active{
     color: ghostwhite;
 }
-.Buttons {
+.ButtonsBorder {
     border: 3px solid deepskyblue;
     margin: 30px 30px;
     border-radius: 10px;
@@ -93,6 +93,13 @@
 }
 .StartInputWithText {
 
+}
+.ButtonsBorderNew {
+    border: 3px solid deepskyblue;
+    width: 87%;
+    height: 150px;
+    margin: 62px 30px;
+    border-radius: 10px;
 }
 
 

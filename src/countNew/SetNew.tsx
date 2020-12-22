@@ -7,7 +7,7 @@ export type IncrPropsType = {
     disabledRes: boolean
 }
 
-export function Reset(props: IncrPropsType) {
+export function Set(props: IncrPropsType) {
     return (
         <button disabled={props.disabledRes} className="AppReset" onClick={() => {
             props.ResCount()
