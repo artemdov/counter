@@ -1,17 +1,14 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 
 
-export type IncrPropsType = {
-    ResCount: () => void
+export type SetPropsType = {
     title: string
-    disabledRes: boolean
+    OnChangeHandlerStart: (valStart: number) => void
 }
 
-export function Set(props: IncrPropsType) {
+export function Set(props: SetPropsType) {
     return (
-        <button disabled={props.disabledRes} className="AppReset" onClick={() => {
-            props.ResCount()
-        }}>
+        <button className="AppSet" onClick={() => {props.OnChangeHandlerStart(10)}}>
             {props.title}
         </button>
 

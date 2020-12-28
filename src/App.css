@@ -18,14 +18,7 @@
     background-color: darkslategrey;
     margin: 20px;
 }
-/*.AppCounterDisplay {
-    background: -moz-linear-gradient(#00bbd6, #ebffff);
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
-    width: 300px;
-    height: 200px;
-    margin: 50px 100px;
-    border-radius: 10px;
-}*/
+
 .DisplayCount {
     margin:10px;
     padding: 80px 220px;
@@ -91,15 +84,23 @@
     height: 30px;
     margin-left: 42px;
 }
-.StartInputWithText {
-
-}
 .ButtonsBorderNew {
     border: 3px solid deepskyblue;
     width: 87%;
     height: 150px;
     margin: 62px 30px;
     border-radius: 10px;
+}
+.AppSet {
+    width: 100px;
+    height: 50px;
+    margin: 50px 40%;
+    border-radius: 10px;
+    background: -moz-linear-gradient(#00bbd6, #ebffff);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+}
+.AppSet:active{
+    color: ghostwhite;
 }
 
 

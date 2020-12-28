@@ -1,14 +1,14 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 
 export type DisplayPropsType ={
-    count: number
+    valStart: number
 }
 
 export function Display(props:DisplayPropsType) {
     return (
-        <div className={props.count === 5 ? "DisplayCountRed" : "DisplayCount"}>
+        <div className={props.valStart < 0 ? "DisplayCountRed" : "DisplayCount"}>
 
-            {props.count}
+            {props.valStart}
 
         </div>
 
