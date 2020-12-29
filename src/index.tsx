@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {DisplayNew} from "./countNew/DisplayNew";
+import {Display} from "./Display";
+import {Set} from "./countNew/SetNew";
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

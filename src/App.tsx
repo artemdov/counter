@@ -1,31 +1,27 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Display, DisplayPropsType} from "./Display";
+import {Display} from "./Display";
 import {Increment} from "./Increment";
 import {Reset} from "./Reset";
-import {DisplayNew, DisplayNewPropsType} from "./countNew/DisplayNew";
+import {DisplayNew} from "./countNew/DisplayNew";
 import {Set} from "./countNew/SetNew";
 
-export type AppPropsType = {
-    DisplayNew: DisplayNewPropsType
-    Display: DisplayPropsType
-}
 
-export function App(props: AppPropsType) {
+export function App() {
 
     let [count, setCount] = useState(0)
+    let [valMax, setValMax] = useState(0)
+    let [valStart, setValStart] = useState(0)
 
-    let max = 5
-    let min = 0
-    let disabledIncCount = count === max
-    let disabledResCount = count === min
+    let disabledIncCount = count === valMax
+    let disabledResCount = count === valStart
     let IncrementCount = () => {
-        if (count < max) {
+        if (count < valMax) {
             setCount(count + 1)
         }
     }
     let ResetCount = () => {
-        setCount(min)
+        setCount(valStart)
     }
 
     return (
@@ -33,8 +29,8 @@ export function App(props: AppPropsType) {
             <div className="AppCounter">
 
                 <Display
-                    valStart={props.Display.valStart}/>
-
+                    valMax={valMax}
+                    valStart={valStart}/>
                 <div className="ButtonsBorder">
                     <Increment title={"Inc"} IncrCount={IncrementCount} disabledInc={disabledIncCount}/>
                     <Reset title={"Res"} ResCount={ResetCount} disabledRes={disabledResCount}/>
@@ -46,11 +42,13 @@ export function App(props: AppPropsType) {
                 <DisplayNew
                     titleMax={"Max value:"}
                     titleStart={"Start value:"}
+                    maxValChange = {setValMax}
+                    startValChange={setValStart}
 
                 />
                 <div className="ButtonsBorderNew">
                     <Set
-                        OnChangeHandlerStart={props.Display.valStart}
+                        valStart={valStart}
                         title={"Set"}/>
                 </div>
 

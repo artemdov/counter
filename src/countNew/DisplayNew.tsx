@@ -1,22 +1,21 @@
-import React, {ChangeEvent, useState} from "react";
-
+import React, {ChangeEvent} from "react";
 
 
 export type DisplayNewPropsType = {
     titleMax: string
     titleStart: string
-
+    maxValChange: (value: number) => void
+    startValChange: (value: number) => void
 }
 
 export function DisplayNew(props: DisplayNewPropsType) {
 
-    let [valMax, setValMax] = useState('')
-    let [valStart, setValStart] = useState('')
+
     const OnChangeHandlerMax = (e: ChangeEvent<HTMLInputElement>) => {
-        setValMax(e.currentTarget.value)
+        props.maxValChange(+e.currentTarget.value)
     }
     const OnChangeHandlerStart = (e: ChangeEvent<HTMLInputElement>) => {
-        setValStart(e.currentTarget.value)
+        props.startValChange(+e.currentTarget.value)
     }
 
     return (
@@ -24,14 +23,12 @@ export function DisplayNew(props: DisplayNewPropsType) {
             <p className='MaxInputWithText'>
                 {props.titleMax}
                 <input className='MaxValueInput'
-                       value={valMax}
                        onChange={OnChangeHandlerMax}
                        type='number'/>
             </p>
             <p className='StartInputWithText'>
                 {props.titleStart}
                 <input className='StartValueInput'
-                       value={valStart}
                        onChange={OnChangeHandlerStart}
                        type='number'/>
             </p>

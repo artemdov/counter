@@ -1,14 +1,15 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 
 export type DisplayPropsType ={
     valStart: number
+    valMax: number
 }
 
 export function Display(props:DisplayPropsType) {
     return (
-        <div className={props.valStart < 0 ? "DisplayCountRed" : "DisplayCount"}>
+        <div className={props.valStart < 0 || props.valStart >= props.valMax ? "DisplayCountRed" : "DisplayCount"}>
 
-            {props.valStart}
+            {/*{props.valStart}*/}
 
         </div>
 

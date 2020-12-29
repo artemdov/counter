@@ -1,14 +1,15 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 
 
 export type SetPropsType = {
     title: string
-    OnChangeHandlerStart: (valStart: number) => void
+    valStart: number
+
 }
 
 export function Set(props: SetPropsType) {
     return (
-        <button className="AppSet" onClick={() => {props.OnChangeHandlerStart(10)}}>
+        <button className="AppSet" onClick={() => {props.valStart}}>
             {props.title}
         </button>
 
