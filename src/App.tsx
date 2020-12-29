@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import './App.css';
 import {Display} from "./Display";
 import {Increment} from "./Increment";
@@ -12,6 +12,13 @@ export function App() {
     let [count, setCount] = useState(0)
     let [valMax, setValMax] = useState(0)
     let [valStart, setValStart] = useState(0)
+
+    const OnChangeHandlerMax = (e: ChangeEvent<HTMLInputElement>) => {
+        setValMax(+e.currentTarget.value)
+    }
+    const OnChangeHandlerStart = (e: ChangeEvent<HTMLInputElement>) => {
+        setValStart(+e.currentTarget.value)
+    }
 
     let disabledIncCount = count === valMax
     let disabledResCount = count === valStart
@@ -31,6 +38,7 @@ export function App() {
                 <Display
                     valMax={valMax}
                     valStart={valStart}/>
+
                 <div className="ButtonsBorder">
                     <Increment title={"Inc"} IncrCount={IncrementCount} disabledInc={disabledIncCount}/>
                     <Reset title={"Res"} ResCount={ResetCount} disabledRes={disabledResCount}/>
@@ -42,13 +50,14 @@ export function App() {
                 <DisplayNew
                     titleMax={"Max value:"}
                     titleStart={"Start value:"}
-                    maxValChange = {setValMax}
-                    startValChange={setValStart}
-
+                    OnChangeHandlerStart={OnChangeHandlerStart}
+                    OnChangeHandlerMax={OnChangeHandlerMax}
                 />
+
                 <div className="ButtonsBorderNew">
+
                     <Set
-                        valStart={valStart}
+                        OnChangeHandlerStart={OnChangeHandlerStart}
                         title={"Set"}/>
                 </div>
 

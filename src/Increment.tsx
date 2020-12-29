@@ -8,7 +8,6 @@ export type IncrPropsType = {
 }
 
 export function Increment(props: IncrPropsType) {
-    debugger
     return (
         <button disabled={props.disabledInc} className="AppIncrement" onClick={() => {
             props.IncrCount()
