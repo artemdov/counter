@@ -31,11 +31,16 @@ export function App() {
         setCount(valStart)
     }
 
+    let SetCount = () => {
+        setCount(valStart)
+    }
+
     return (
         <div className="App">
             <div className="AppCounter">
 
                 <Display
+                    count={count}
                     valMax={valMax}
                     valStart={valStart}/>
 
@@ -57,7 +62,7 @@ export function App() {
                 <div className="ButtonsBorderNew">
 
                     <Set
-                        OnChangeHandlerStart={OnChangeHandlerStart}
+                        setCount={SetCount}
                         title={"Set"}/>
                 </div>
 
