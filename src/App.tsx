@@ -20,11 +20,14 @@ export function App() {
         setValStart(+e.currentTarget.value)
     }
 
+
     let disabledIncCount = count === valMax
     let disabledResCount = count === valStart
+
     let IncrementCount = () => {
         if (count < valMax) {
             setCount(count + 1)
+
         }
     }
     let ResetCount = () => {
