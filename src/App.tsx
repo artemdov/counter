@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Display} from "./Display";
 import {Increment} from "./Increment";
@@ -12,17 +12,11 @@ export function App() {
     let [count, setCount] = useState(0)
     let [valMax, setValMax] = useState(0)
     let [valStart, setValStart] = useState(0)
-
-    const OnChangeHandlerMax = (e: ChangeEvent<HTMLInputElement>) => {
-        setValMax(+e.currentTarget.value)
-    }
-    const OnChangeHandlerStart = (e: ChangeEvent<HTMLInputElement>) => {
-        setValStart(+e.currentTarget.value)
-    }
-
+    let [change, setChange] = useState(false)
 
     let disabledIncCount = count === valMax
     let disabledResCount = count === valStart
+    let disabledSetCount = count  < 0 || valMax < 0 || valStart >= valMax
 
     let IncrementCount = () => {
         if (count < valMax) {
@@ -33,7 +27,6 @@ export function App() {
     let ResetCount = () => {
         setCount(valStart)
     }
-
     let SetCount = () => {
         setCount(valStart)
     }
@@ -43,6 +36,7 @@ export function App() {
             <div className="AppCounter">
 
                 <Display
+                    displayChange={change}
                     count={count}
                     valMax={valMax}
                     valStart={valStart}/>
@@ -58,15 +52,19 @@ export function App() {
                 <DisplayNew
                     titleMax={"Max value:"}
                     titleStart={"Start value:"}
-                    OnChangeHandlerStart={OnChangeHandlerStart}
-                    OnChangeHandlerMax={OnChangeHandlerMax}
+                    setValMax={setValMax}
+                    setValStart={setValStart}
+                    setChange={setChange}
                 />
 
                 <div className="ButtonsBorderNew">
 
                     <Set
+                        disabledSet={disabledSetCount}
                         setCount={SetCount}
-                        title={"Set"}/>
+                        title={"Set"}
+                        setChange={setChange}
+                    />
                 </div>
 
             </div>
