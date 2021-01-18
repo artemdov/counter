@@ -21,7 +21,6 @@ export function App() {
     let IncrementCount = () => {
         if (count < valMax) {
             setCount(count + 1)
-
         }
     }
     let ResetCount = () => {
