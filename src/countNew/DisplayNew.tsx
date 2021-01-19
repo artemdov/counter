@@ -1,6 +1,5 @@
 import React, {ChangeEvent} from "react";
 
-
 export type DisplayNewPropsType = {
     titleMax: string
     titleStart: string
