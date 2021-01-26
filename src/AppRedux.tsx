@@ -31,16 +31,13 @@ export function AppWithRedux() {
 
 
     let IncrementCount = () => {
-        const action = incrementValueAC()
-        dispatch(action)
+        dispatch(incrementValueAC())
     }
     let ResetCount = () => {
-        const action = resetStartValueAC(valStart)
-        dispatch(action)
+        dispatch(resetStartValueAC())
     }
     let SetCount = () => {
-        const action = setCountAC(valStart)
-        dispatch(action)
+        dispatch(setCountAC())
     }
 
 
@@ -72,7 +69,7 @@ export function AppWithRedux() {
 
                     <Set
                         disabledSet={disabledSetCount}
-                        setCount={SetCount}
+                        SetCount={SetCount}
                         title={"Set"}
 
                     />

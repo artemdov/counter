@@ -4,7 +4,7 @@ import {setChangeValueAC} from "../state/reducers/count-reducer";
 
 export type SetPropsType = {
     title: string
-     setCount: () => void
+     SetCount: () => void
     disabledSet: boolean
 
 
@@ -13,7 +13,7 @@ export type SetPropsType = {
 export function Set(props: SetPropsType) {
 
     const onclickSetHandler = () => {
-        props.setCount()
+        props.SetCount()
         setChangeValueAC(true)
 
     }

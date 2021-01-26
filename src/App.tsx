@@ -60,7 +60,7 @@ export function App() {
 
                     <Set
                         disabledSet={disabledSetCount}
-                        setCount={SetCount}
+                        SetCount={SetCount}
                         title={"Set"}
                         /*setChange={setChange}*/
                     />

@@ -13,16 +13,14 @@ export function DisplayNew(props: DisplayNewPropsType) {
     const dispatch = useDispatch()
 
     const OnChangeHandlerMax = (e: ChangeEvent<HTMLInputElement>) => {
-        const action = setValMaxAC(+e.currentTarget.value)
         setChangeValueAC(true)
-        dispatch(action)
+        dispatch(setValMaxAC(+e.currentTarget.value))
 
 
     }
     const OnChangeHandlerStart = (e: ChangeEvent<HTMLInputElement>) => {
-        const action = setValStartAC(+e.currentTarget.value)
         setChangeValueAC(true)
-        dispatch(action)
+        dispatch(setValStartAC(+e.currentTarget.value))
     }
     return (
         <div className="DisplayCounterNew">

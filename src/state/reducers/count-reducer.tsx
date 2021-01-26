@@ -16,14 +16,14 @@ export type CurrentCountType = {
 }
 export type ResetInStartType = {
     type: typeof RESET_IN_START_VALUE
-    valStart: number
+
 }
 export type IncrementType = {
     type:typeof INCREMENT_VALUE
 }
 export type SetCountType = {
     type: typeof SET_COUNT
-    valStart: number
+
 }
 export type ChangeDisplayType = {
     type: typeof CHANGE_DISPLAY
@@ -79,12 +79,12 @@ export const reducer = (state=InitialState, action: ActionType):InitialStateType
         }
         case RESET_IN_START_VALUE: {
             return{
-                ...state,count: action.valStart
+                ...state,count: state.valStart
             }
         }
         case SET_COUNT: {
             return{
-                ...state,count: action.valStart
+                ...state,count: state.valStart
             }
         }
         case SET_VALUE_START: {
@@ -114,17 +114,14 @@ export const reducer = (state=InitialState, action: ActionType):InitialStateType
 }
 
 
-/*export const changeDisplayAC = (value: boolean): ChangeDisplayType => {
-    return {type: CHANGE_DISPLAY, value}
-}*/
-export const setCountAC = (valStart: number): SetCountType => {
-    return {type: SET_COUNT, valStart}
+export const setCountAC = (): SetCountType => {
+    return {type: SET_COUNT}
 }
 export const incrementValueAC = (): IncrementType => {
     return {type: INCREMENT_VALUE}
 }
-export const resetStartValueAC = (valStart: number): ResetInStartType => {
-    return {type: RESET_IN_START_VALUE, valStart}
+export const resetStartValueAC = (): ResetInStartType => {
+    return {type: RESET_IN_START_VALUE}
 }
 export const setValStartAC = (valStart: number): SetValueStartType => {
     return {type: SET_VALUE_START, valStart}
@@ -135,9 +132,7 @@ export const setValMaxAC = (valMax: number): SetValueMaxType => {
 export const setChangeValueAC = (change: boolean): SetChangeValueType => {
     return {type: SET_CHANGE_VALUE, change}
 }
-/*export const CurrentCountAC = (count: number): CurrentCountType => {
-    return {type: CURRENT_COUNT, count}
-}*/
+
 
 
 
