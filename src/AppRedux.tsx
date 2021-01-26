@@ -5,30 +5,44 @@ import {Increment} from "./Increment";
 import {Reset} from "./Reset";
 import {DisplayNew} from "./countNew/DisplayNew";
 import {Set} from "./countNew/SetNew";
+import {useDispatch, useSelector} from "react-redux";
+import {incrementValueAC, resetStartValueAC, setCountAC} from "./state/reducers/count-reducer";
+import {AppStateType} from "./state/store";
 
 
-export function App() {
+export function AppWithRedux() {
 
-    let [count, setCount] = useState(0)
-    let [valMax, setValMax] = useState(0)
-    let [valStart, setValStart] = useState(0)
-    let [change, setChange] = useState(false)
+
+    type CountType = number
+    type ValMaxType = number
+    type ValStartType = number
+    type ChangeType = boolean
+
+
+    const dispatch = useDispatch()
+    const count = useSelector<AppStateType, CountType>(state => state.count)
+    const valMax = useSelector<AppStateType, ValMaxType>(state => state.valMax)
+    const valStart = useSelector<AppStateType, ValStartType>(state => state.valStart)
+    const change = useSelector<AppStateType, ChangeType>(state => state.change)
 
     let disabledIncCount = count === valMax
     let disabledResCount = count === valStart
-    let disabledSetCount = count  < 0 || valMax < 0 || valStart >= valMax
+    let disabledSetCount = count < 0 || valMax < 0 || valStart >= valMax
+
 
     let IncrementCount = () => {
-        if (count < valMax) {
-            setCount(count + 1)
-        }
+        const action = incrementValueAC()
+        dispatch(action)
     }
     let ResetCount = () => {
-        setCount(valStart)
+        const action = resetStartValueAC(valStart)
+        dispatch(action)
     }
     let SetCount = () => {
-        setCount(valStart)
+        const action = setCountAC(valStart)
+        dispatch(action)
     }
+
 
     return (
         <div className="App">
@@ -51,9 +65,7 @@ export function App() {
                 <DisplayNew
                     titleMax={"Max value:"}
                     titleStart={"Start value:"}
-                    setValMax={setValMax}
-                    setValStart={setValStart}
-                    setChange={setChange}
+
                 />
 
                 <div className="ButtonsBorderNew">
@@ -62,7 +74,7 @@ export function App() {
                         disabledSet={disabledSetCount}
                         setCount={SetCount}
                         title={"Set"}
-                        setChange={setChange}
+
                     />
                 </div>
 
@@ -72,4 +84,4 @@ export function App() {
 }
 
 
-export default App;
+export default AppWithRedux;

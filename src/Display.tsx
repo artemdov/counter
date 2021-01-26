@@ -18,6 +18,7 @@ export function Display(props: DisplayPropsType) {
 
             {props.displayChange ? <p className='RedError'> {props.count}</p> : <p className='pressValue'>{incorrect ? 'incorrect-value' : 'press "SET"'}</p>}
 
+
         </div>
 
     )

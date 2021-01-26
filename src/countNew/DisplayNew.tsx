@@ -1,21 +1,28 @@
 import React, {ChangeEvent} from "react";
+import {setChangeValueAC, setValMaxAC, setValStartAC} from "../state/reducers/count-reducer";
+import {useDispatch} from "react-redux";
 
 export type DisplayNewPropsType = {
     titleMax: string
     titleStart: string
-    setValMax: (value: number) => void
-    setValStart: (value: number) => void
-    setChange: (value: boolean) => void
+
 }
 
 export function DisplayNew(props: DisplayNewPropsType) {
+
+    const dispatch = useDispatch()
+
     const OnChangeHandlerMax = (e: ChangeEvent<HTMLInputElement>) => {
-        props.setValMax(+e.currentTarget.value)
-        props.setChange(false)
+        const action = setValMaxAC(+e.currentTarget.value)
+        setChangeValueAC(true)
+        dispatch(action)
+
+
     }
     const OnChangeHandlerStart = (e: ChangeEvent<HTMLInputElement>) => {
-        props.setValStart(+e.currentTarget.value)
-        props.setChange(false)
+        const action = setValStartAC(+e.currentTarget.value)
+        setChangeValueAC(true)
+        dispatch(action)
     }
     return (
         <div className="DisplayCounterNew">

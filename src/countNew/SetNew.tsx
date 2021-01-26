@@ -1,10 +1,10 @@
 import React from "react";
+import {setChangeValueAC} from "../state/reducers/count-reducer";
 
 
 export type SetPropsType = {
     title: string
-    setCount: () => void
-    setChange: (value: boolean) => void
+     setCount: () => void
     disabledSet: boolean
 
 
@@ -14,7 +14,7 @@ export function Set(props: SetPropsType) {
 
     const onclickSetHandler = () => {
         props.setCount()
-        props.setChange(true)
+        setChangeValueAC(true)
 
     }
     return (

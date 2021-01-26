@@ -51,9 +51,9 @@ export function App() {
                 <DisplayNew
                     titleMax={"Max value:"}
                     titleStart={"Start value:"}
-                    setValMax={setValMax}
+                    /*setValMax={setValMax}
                     setValStart={setValStart}
-                    setChange={setChange}
+                    setChange={setChange}*/
                 />
 
                 <div className="ButtonsBorderNew">
@@ -62,7 +62,7 @@ export function App() {
                         disabledSet={disabledSetCount}
                         setCount={SetCount}
                         title={"Set"}
-                        setChange={setChange}
+                        /*setChange={setChange}*/
                     />
                 </div>
 
