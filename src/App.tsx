@@ -5,6 +5,7 @@ import {Increment} from "./Increment";
 import {Reset} from "./Reset";
 import {DisplayNew} from "./countNew/DisplayNew";
 import {Set} from "./countNew/SetNew";
+import {setChangeValueAC} from "./state/reducers/count-reducer";
 
 
 export function App() {
@@ -35,7 +36,8 @@ export function App() {
             <div className="AppCounter">
 
                 <Display
-                    displayChange={change}
+                    toNumber={true}
+                    incorrectVal={true}
                     count={count}
                     valMax={valMax}
                     valStart={valStart}/>
@@ -49,6 +51,7 @@ export function App() {
             <div className="AppCounterNew">
 
                 <DisplayNew
+                    setToNumber={()=>{}}
                     titleMax={"Max value:"}
                     titleStart={"Start value:"}
                     /*setValMax={setValMax}
@@ -59,6 +62,7 @@ export function App() {
                 <div className="ButtonsBorderNew">
 
                     <Set
+                        setToNumber={()=>{}}
                         disabledSet={disabledSetCount}
                         SetCount={SetCount}
                         title={"Set"}

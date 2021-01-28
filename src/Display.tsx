@@ -1,18 +1,22 @@
 import React from "react";
+import {setChangeValueAC, setCountAC} from "./state/reducers/count-reducer";
+import {useDispatch} from "react-redux";
 
 
 export type DisplayPropsType = {
+    incorrectVal: boolean
     valStart: number
     valMax: number
     count: number
-    displayChange: boolean
+    toNumber: boolean
+
 }
 
 export function Display(props: DisplayPropsType) {
-    const incorrect = props.valStart < 0 || props.valMax < 0 || props.valStart >= props.valMax
+
     return (
-        <div className={incorrect || props.count === props.valMax ? "DisplayCountRed" : "DisplayCount"}>
-                {props.displayChange ? <p className='RedError'> {props.count}</p> : <p className='pressValue'>{incorrect ? 'incorrect-value' : 'press "SET"'}</p>}
+        <div className={props.incorrectVal || props.count === props.valMax ? "DisplayCountRed" : "DisplayCount"}>
+                {props.toNumber ? <p className='RedError'> {props.count}</p> : <p className='pressValue'>{props.incorrectVal ? 'incorrect-value' : 'press "SET"'}</p>}
         </div>
 
     )

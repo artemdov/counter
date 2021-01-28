@@ -61,17 +61,6 @@ const InitialState:InitialStateType = {
 
 export const reducer = (state=InitialState, action: ActionType):InitialStateType => {
     switch (action.type) {
-        // case CURRENT_COUNT: {
-        //     return{
-        //         ...state,count: action.count
-        //     }
-        // }
-        /*case CHANGE_DISPLAY: {
-       return{
-           ...state,
-           change: action.value
-       }
-   }*/
         case INCREMENT_VALUE: {
             return{
                 ...state,count: state.count + 1
@@ -84,20 +73,20 @@ export const reducer = (state=InitialState, action: ActionType):InitialStateType
         }
         case SET_COUNT: {
             return{
-                ...state,count: state.valStart
+                ...state,
+                count: state.valStart
             }
         }
         case SET_VALUE_START: {
             return{
                 ...state,
-                count: action.valStart
+                valStart: action.valStart
             }
         }
-
         case SET_VALUE_MAX: {
             return{
                 ...state,
-                count: action.valMax
+                valMax: action.valMax
             }
         }
         case SET_CHANGE_VALUE: {
